@@ -1,0 +1,56 @@
+<ion-view title="Orders Detail">
+	<ion-content>
+		<div class="list card">
+			<ul class="list" style="" ng-repeat="costumer in costumers | filter : {idCostumer : idCostumer}">
+			    <li class="item">
+				    <label style="float:left">Date</label>
+				    <p style="float:right;">{{costumer.date}}</p>
+			    </li>
+			    <li class="item">
+				    <label style="float:left">Time</label>
+				    <p style="float:right;">11:00 AM</p>
+			    </li>
+			    <li class="item">
+				    <label style="float:left">Table Number</label>
+				    <p style="float:right;">{{costumer.categoryName}} - {{costumer.noTable}}</p>
+			    </li>
+			    <li class="item">
+				    <label style="float:left">Name</label>
+				    <p style="float:right;">{{costumer.costumerName}}</p>
+			    </li>
+			    <li class="item">
+				    <label style="float:left">Visitor</label>
+				    <p style="float:right;">{{costumer.numberVisitor}}</p>
+			    </li>
+			</ul>
+			<div class="item item-image">
+			</div>
+			<div class="item">
+				<div class="row header header-dark">
+					<div class="row header header-dark">
+			          <div class="col col-50">menu</div>
+			          <div class="col col-33">qty x price</div>
+			          <div class="col"><i class="ion ion-gear-b"></i></div>
+			        </div>
+				</div>
+				<div class="row" ng-repeat="order in orders | filter : {idCostumer : idCostumer} | orderBy:'date'">
+			        <div class="col col-50 tbl-menuName" style="text-align: left;">{{order.menuName}}<br><div class="tbl-ket">{{order.note}} - {{order.takeAway}}</div></div>
+			        <div class="col col-33 tbl-qtyPrice">{{order.qty}} x Rp.{{order.price}}</div>
+			        <div class="col"></div>
+				</div>
+				<div class="row total">
+					<div class="col col-33"><b></b></div>
+					<div class="col col-10"></div>
+					<div class="col col-20"></div>
+					<div class="col"></div>
+				</div>
+				<!-- <div class="row">
+					<button class="button button-small button-full button-calm icon-left">
+						<i class="ion ion-plus"></i>
+					  	add new order
+					</button>
+				</div> -->
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

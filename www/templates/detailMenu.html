@@ -1,0 +1,48 @@
+<ion-view title="Detail Menu" id="detailMenu">
+	<ion-content>
+		<div class="list card">
+			<div class="list card" ng-repeat="menu in menus | filter : {idMenu : menuId}">
+				<div class="item item-image">
+					<img ng-src="img/menus/{{menu.image}}">
+				</div>
+				<ul class="list">
+					<li class="item item-label">
+						<h2 class="left-h2">Name	:</h2>
+						<p class="right-p">{{menu.menuName}}</p>
+					</li>
+					<li class="item">
+						<h2 class="left-h2">Harga	:</h2>
+						<p class="right-p">Rp.20.000,00</p>
+					</li>
+					<li class="item">
+						<h2 class="left-h2">Status	:</h2>
+						<p class="right-p">Available</p>
+					</li>
+					<li class="item">
+						<h2 class="left-h2">Category	:</h2>
+						<p class="right-p">Foods</p>
+					</li>
+				</ul>
+				<div class="card">
+					<form id="detailMenu-form1" class="list" name="addMenu">
+						<ion-toggle toggle-class="toggle-assertive" id="takeAway" name="takeAway" class="takeAway" ng-model="menu.takeAway" ng-init="menu.takeAway=false">Take Away</ion-toggle>
+
+						<label class="item item-input ket">
+							<textarea placeholder="Note..." ng-model="menu.note" name="note" ng-init="menu.note=''"></textarea>
+						</label>
+
+						<label class="item item-input Quan">
+							<span class="input-label"><i style="color: red">*</i> Quantity</span>
+							<input type="number" placeholder="Quantity" ng-init="menu.qty=1" name="qty" ng-model="menu.qty" required>
+						</label>
+
+						<button type="submit" ng-click="selectedElem(menu)" ng-disabled="addMenu.$invalid" id="viewOrder-button1" class="button button-calm button-full icon-left">
+							<i class="ion ion-thumbsup"></i>
+							Order !
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

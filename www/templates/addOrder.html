@@ -1,0 +1,53 @@
+<ion-view title="Add Order" id="page3">
+    <ion-content padding="true" class="has-header">
+        <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+        <form id="addOrder-form2" class="list">
+            <label class="item item-input" name="search">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="search" placeholder="Search" ng-model="searchMenu">
+            </label>
+        </form>
+        <a class="button button-small icon-left button-block button-assertive" href="#/page1/page3/a/a/notAvailableMenu"><i class="ion ion-plus"></i>
+        Not Available Menu
+        </a>
+        <div class="row">
+          <h4 id="addOrder-heading3" style="color:#000000;">Makanan</h4>
+        </div>
+        <ion-list id="addOrder-list12" class="">
+            <ul class="list" style="margin-bottom: 10px;">
+                <a class="item item-avatar-left menu-order" href="#/page1/page3/{{menuFood.idMenu}}/{{menuFood.idCategory}}" ng-repeat="menuFood in menuFoods | filter:searchMenu">
+                  <img ng-src="img/menus/{{menuFood.image}}">
+                  <h3 class="name">{{menuFood.menuName}}</h3>
+                  <p class="price">Rp.{{menuFood.price}},00</p>
+                  <p class="status">{{menuFood.status}}</p>
+                </a>
+            </ul>
+        </ion-list>
+        <div class="row">
+          <h4 id="addOrder-heading4" style="color:#000000;">Minuman</h4>
+        </div>
+        <ion-list id="addOrder-list13">
+            <ul class="list" style="margin-bottom: 10px;">
+                <a class="item item-avatar-left menu-order" href="#/page1/page3/{{menuDrink.idMenu}}/{{menuDrink.idCategory}}" ng-repeat="menuDrink in menuDrinks | filter:searchMenu">
+                  <img ng-src="img/menus/{{menuDrink.image}}">
+                  <h3 class="name">{{menuDrink.menuName}}</h3>
+                  <p class="price">Rp.{{menuDrink.price}},00</p>
+                  <p class="status">{{menuDrink.status}}</p>
+                </a>
+            </ul>
+        </ion-list>
+        <div class="row">
+          <h4 id="addOrder-heading5" style="color:#000000;">Others</h4>
+        </div>
+        <ion-list id="addOrder-list14">
+            <ul class="list" style="margin-bottom: 10px;">
+                <a class="item item-avatar-left menu-order" href="#/page1/page3/{{menuOther.idMenu}}/{{menuOther.idCategory}}" ng-repeat="menuOther in menuOthers | filter:searchMenu">
+                  <img ng-src="img/menus/{{menuOther.image}}">
+                  <h3 class="name">{{menuOther.menuName}}</h3>
+                  <p class="price">Rp.{{menuOther.price}},00</p>
+                  <p class="status">{{menuOther.status}}</p>
+                  </a>
+            </ul>
+        </ion-list>
+    </ion-content>
+</ion-view>

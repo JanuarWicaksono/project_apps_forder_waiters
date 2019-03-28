@@ -1,0 +1,16 @@
+<ion-view title="Not Available Menu" id="page5">
+	<ion-content padding="true" class="has-header">
+	<div class="list card">
+		<div class="row header header-th-notAvailable">
+			<div class="col col-50">menu</div>
+			<div class="col col-20">price</div>
+			<div class="col"><i class="ion ion-gear-b"></i></div>
+		</div>
+		<div class="row" ng-repeat="menu in notAvailableMenus">
+			<div class="col col-50">{{menu.menuName}}</div>
+			<div class="col col-20">{{menu.price}}</div>
+			<div class="col"><a class="button button-icon button-small" ng-click="ctrl.add($index)"><i class="ion ion-close"></i></a></div>
+		</div>
+	</div>
+	</ion-content>
+</ion-view>

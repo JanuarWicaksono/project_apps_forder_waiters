@@ -1,0 +1,24 @@
+<ion-view title="All Orders" id="page4">
+    <ion-content padding="true" class="has-header">
+        <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+        <form id="addOrder-form2" class="list">
+            <label class="item item-input" name="search">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" ng-model="searchMenu" placeholder="search">
+            </label>
+        </form>
+        <a class="button button-small icon-left button-block button-assertive" href="#/page1/page3/a/b/notAvailableTable"><i class="ion ion-plus"></i>
+        Not Available Table
+        </a>
+        <h4 id="addOrder-heading3" style="color:#000000;">All Ordered</h4>
+        <ion-list id="addOrder-list12" class="">
+            <ul class="list" style="margin-bottom: 10px;">
+                <a style="width: 50%; float: left;" class="item" href="#/page1/page4/{{costumer.idCostumer}}" ng-repeat="costumer in costumers | filter:searchMenu">
+                  <h3 class="">{{costumer.costumerName}}</h3>
+                  <p class="">{{costumer.categoryName}}- {{costumer.noTable}}</p>
+                  <p>{{costumer.date}}</p>
+                </a>
+            </ul>
+        </ion-list>
+    </ion-content>
+</ion-view>

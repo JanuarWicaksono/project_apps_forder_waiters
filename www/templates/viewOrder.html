@@ -1,0 +1,62 @@
+<ion-view title="View Order" id="page2">
+  <ion-content padding="true" class="has-header">
+    <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+    <h4 id="viewOrder-heading1" style="color:#000000;">Costumer Details</h4>
+    <form id="viewOrder-form1" class="list" ng-submit="doOrder()" name="order">
+      <!-- <label class="item item-input numberOfVisitors" id="viewOrder-input3" name="numberOfVisitors">
+        <span class="input-label">Date</span>
+        <input type="time" name="timeOrder">
+      </label>
+      -->
+      <label class="item item-input tableNumber" id="viewOrder-input1">
+        <span class="input-label"><i style="color: red">*</i> Table Number</span>
+        <input type="number" placeholder="Table Number" name="tableNumber" ng-model="formData.tableNumber" required>
+      </label>
+      <label class="item item-input item-stacked-label costumerName" id="viewOrder-input2">
+        <span class="input-label"><i style="color: red">*</i> Costumer Name</span>
+        <input type="text" placeholder="Costumer Name" name="costumerName" ng-model="formData.costumerName" required>
+      </label>
+      <label class="item item-input numberOfVisitors" id="viewOrder-input3">
+        <span class="input-label"><i style="color: red">*</i> Number of Visitors</span>
+        <input type="number" ng-init="formData.numberVisitor=1" placeholder="Number of Visitors" name="numberVisitor" ng-model="formData.numberVisitor" required>
+      </label>
+      <!--       <ion-toggle toggle-class="toggle-assertive" id="viewOrder-toggle2" name="takeAway" class="takeAway">Take Away</ion-toggle> -->
+      <h4 cid="viewOrder-heading2" style="color:#000000;">Ordered</h4>
+      <div class="table list-order">
+        <div class="row header header-dark">
+          <div class="col col-50">menu</div>
+          <div class="col col-33">qty x price</div>
+          <div class="col"><i class="ion ion-gear-b"></i></div>
+        </div>
+        <!-- <div class="row">
+          <div class="col col-50 tbl-menuName" style="text-align: left;">nasi goreng<br><div class="tbl-ket">ga pake micin sayur</div></div>
+          <div class="col col-33 tbl-qtyPrice">1 X Rp.20.000</div>
+          <div class="col"><a class="button button-icon button-small" ng-click="ctrl.add($index)"><i class="ion ion-close"></i></a></div>
+        </div> -->
+        <div class="row" ng-repeat="order in listOrders track by $index">
+          <div class="col col-50 tbl-menuName" style="text-align: left;">{{order.menuName}}<br><div class="tbl-ket">{{order.note}} - {{order.takeAway}}</div></div>
+          <div class="col col-33 tbl-qtyPrice">{{order.qty}} X Rp.{{order.price}}</div>
+          <div class="col"><a class="button button-icon button-small" ng-click="deleteItem(order)"><i class="ion ion-close"></i></a></div>
+          <input type="hidden" ng-model="formData['orders'][$index]['idMenu']" ng-init="formData['orders'][$index]['idMenu']=order.idMenu">
+          <input type="hidden" ng-model="formData['orders'][$index]['qty']" ng-init="formData['orders'][$index]['qty']=order.qty">
+          <input type="hidden" ng-model="formData['orders'][$index]['note']" ng-init="formData['orders'][$index]['note']=order.note">
+          <input type="hidden" ng-model="formData['orders'][$index]['takeAway']" ng-init="formData['orders'][$index]['takeAway']=order.takeAway">
+        </div>
+      </div>
+        <!-- <div class="row total">
+          <div class="col col-33"><b>Total</b></div>
+          <div class="col col-10"></div>
+          <div class="col col-20"></div>
+          <div class="col">Rp.200.000</div>
+        </div> -->
+        <button type="submit" ng-disabled="order.$invalid" id="viewOrder-button1" class="button button-calm button-block icon-left">
+          <i class="ion ion-thumbsup"></i>
+          Order !
+        </button>
+        <a ng-click="showConfirmRefresh()" id="viewOrder-button1" class="button button-assertive button-block icon-left">
+        <i class="ion ion-loop"></i>
+        Refresh !
+      </a>
+      </form>
+    </ion-content>
+  </ion-view>
