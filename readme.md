@@ -5,6 +5,8 @@
 This is my simple source code for build <a href="#">Mobile Hybrid Application Restaurant Order System Using Ionic Framework 1.3.x</a> when i was Internshiped at <a href="https://www.folarium.co.id/home">CV. Folarium Technomedia</a>
 
 <img src="image/sc-1.PNG">
+<img src="image/sc-2.PNG">
+<img src="image/sc-3.PNG">
 <img src="image/sc-4.PNG">
 
 <p align="center">
