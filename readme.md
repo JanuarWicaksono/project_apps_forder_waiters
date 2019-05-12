@@ -8,6 +8,14 @@ This is my simple source code for build <a href="#">Mobile Hybrid Application Re
 <img src="image/sc-2.PNG">
 <img src="image/sc-3.PNG">
 <img src="image/sc-4.PNG">
+<img src="image/10.PNG">
+<img src="image/11.PNG">
+<img src="image/2.PNG">
+<img src="image/3.PNG">
+<img src="image/4.PNG">
+<img src="image/6.PNG">
+<img src="image/8.1.PNG">
+<img src="image/9.PNG">
 
 <p align="center">
 	<h2>Tools Used</h2>
